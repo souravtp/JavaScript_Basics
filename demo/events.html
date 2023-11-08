@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">What is the time now?</button>
+    <p id="time"></p>
+
+    <button onclick="this.innerHTML=Date()">the time is?</button><br>
+
+    <button onclick="document.getElementById('demo').innerHTML=Date()">Click to see date and time</button>
+    <p id="demo"></p>
+</body>
+<script>
+    const button = document.getElementById("btn")
+
+    showDateTime = () => {
+        const demo = document.getElementById("time")
+        demo.innerHTML = Date()
+    }
+
+    button.addEventListener('click', showDateTime)
+</script>
+</html>

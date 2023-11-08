@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello How are you?</p>
+    <h1 id="header">AAAASSSDDDFFFGGGHHJK</h1>
+    <button type="button" onclick="document.write(4+8)">Click Here</button>
+    <p id="car"></p>
+
+    <input id="dateInput" type="date">
+    <button onclick="dateInput.showPicker()">Select Date</button>
+
+    <h2 class="title" contenteditable="plaintext-only"></h2>
+
+    <dialog id="confirm">
+        <form action="" method="dialog">
+            Are you sure?
+            <button value="1">Yes</button>
+            <button value="0">No</button>
+        </form>
+    </dialog>
+
+    <button popovertarget="foo">Toggle the popover</button>
+    <div id="foo" popover>popover content</div>
+
+    <input type="text" id="nameInput" placeholder="Enter Your Name">
+    <button id="alertButton">Click Here</button>
+
+    <img src="../../../Downloads/images/3.jpg" loading="lazy" alt="">
+    <iframe src="" frameborder="0"></iframe>
+
+    <p id="thisTest"></p>
+
+    <button onclick="this.style.display='none'">Click to remove</button>
+<script>
+    document.write('hello world')
+    document.getElementById('header').innerHTML="Hii"
+    // alert(5+6);
+
+    let carName = 'Volvo';
+
+    document.getElementById('car').innerHTML = carName;
+
+    const nameInput = document.getElementById('nameInput');
+    const alertButton = document.getElementById('alertButton');
+    function triggerAlert() {
+        const name = nameInput.value;
+        const newColor = getRandomColor();
+
+        if (name.trim() === '') {
+            alert('Please Enter a name');
+        } else {
+            document.body.style.backgroundColor = newColor;
+
+            setTimeout(function () {
+                alert(name + ' Clicked the button');
+            }, 0);
+            
+        }
+    }
+    alertButton.addEventListener('click', triggerAlert)
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i<6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // let y = this;
+    // console.log(y);
+
+
+    document.getElementById('thisTest').innerHTML = someFunction();
+
+    function someFunction() {
+        "use strict";
+        return this;
+    }
+    console.log(someFunction());
+</script>
+</body>
+</html>
